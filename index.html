@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WS: File Upload Test</title>
+<script>
+	var ws;
+	function openConnection() {
+		if (typeof (ws) === 'undefined' || ws === null
+				|| ws.readyState === ws.CLOSED)
+			ws = new WebSocket('ws://localhost/chatapp/socket/conn/ws');
+
+		ws.onclose = function() {
+			openConnection();
+		};
+		ws.onerror = function(e) {
+			console.log(e);
+		};
+
+	}
+
+	function sendMessage() {
+		var file = document.getElementById('filename').files[0];
+		if (typeof (file) !== 'undefined' && file !== null) {
+			sendBlobWithText(file);
+		} else {
+			sendOnlyText();
+		}
+	}
+
+	function sendBlobWithText(file) {
+		ws.binaryType = "blob";
+		var reader = new FileReader();
+		reader.filename = file.name;
+		reader.onload = function(e) {
+			ws.send(e.target.result);
+
+			ws.onmessage = function(sr) {
+				if (sr.data === "1") {
+					var text = document.getElementById('text').value;
+
+					var data = new Object();
+					data.message = text;
+					data.file = e.target.filename;
+					ws.send(JSON.stringify(data));
+				}
+			}
+		}
+		reader.fileName = file.name
+		reader.readAsArrayBuffer(file);
+	}
+
+	function sendOnlyText() {
+		sendTextWithFileName();
+	}
+
+	function sendTextWithFileName(filename) {
+		var text = document.getElementById('text').value;
+
+		var data = new Object();
+		data.message = text;
+		if (typeof (filename) !== 'undefined')
+			data.file = filename;
+		ws.send(JSON.stringify(data));
+	}
+
+	function concatArrayBuffer(b1, b2) {
+		var tmp = new Uint8Array(b1.byteLength + b2.byteLength);
+		tmp.set(new Uint8Array(b1), 0);
+		tmp.set(new Uint8Array(b2), b1.byteLength);
+
+		return tmp.buffer;
+	}
+</script>
+</head>
+<body onload="openConnection()">
+	<textarea rows="5" cols="15" id="text"></textarea>
+	<br>
+	<br>
+	<input type="file" id="filename" />
+	<br>
+	<br>
+	<input type="button" value="Upload" onclick="sendMessage()" />
+</body>
+</html>
