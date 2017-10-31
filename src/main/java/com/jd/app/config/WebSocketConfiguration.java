@@ -25,5 +25,11 @@ public class WebSocketConfiguration implements WebSocketConfigurer {
 		registry.addHandler(textMessageHandler, "/socket/conn/tws");
 		registry.addHandler(binaryMessageHandler, "/socket/conn/bws");
 	}
-
+	
+	@Bean
+	public ServletServerContainerFactoryBean createWebSocketContainer() {
+		ServletServerContainerFactoryBean container = new ServletServerContainerFactoryBean();
+		container.setMaxBinaryMessageBufferSize(26214400);
+		return container;
+	}
 }
