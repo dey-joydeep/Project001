@@ -16,14 +16,12 @@ import com.jd.app.websocket.TextMessageHandler;
 public class WebSocketConfiguration implements WebSocketConfigurer {
 
 	@Autowired
-	protected TextMessageHandler textMessageHandler;
-	@Autowired
-	protected BinaryWebSocketHandler binaryMessageHandler;
+	protected MessageHandler messageHandler;
 
 	@Override
 	public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-		registry.addHandler(textMessageHandler, "/socket/conn/tws");
-		registry.addHandler(binaryMessageHandler, "/socket/conn/bws");
+		registry.addHandler(messageHandler, "/socket/conn/ws").addInterceptors(
+				new HttpSessionHandshakeInterceptor());
 	}
 	
 	@Bean
