@@ -16,7 +16,6 @@ import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.AbstractWebSocketHandler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jd.app.beans.MessageBean;
 
 @Component
 public class MessageHandler extends AbstractWebSocketHandler {
@@ -46,11 +45,11 @@ public class MessageHandler extends AbstractWebSocketHandler {
 			TextMessage message) throws Exception {
 
 		ObjectMapper mapper = Jackson2ObjectMapperBuilder.json().build();
-		MessageBean messageBean = mapper.readValue(message.asBytes(),
-				MessageBean.class);
+		MessageHolder messageHolder = mapper.readValue(message.asBytes(),
+				MessageHolder.class);
 
-		System.out.println("Message: " + messageBean.getMessage());
-		String fileName = messageBean.getFile();
+		System.out.println("Message: " + messageHolder.getMessage());
+		String fileName = messageHolder.getFile();
 		if (uploadedFile != null && fileName != null) {
 			int lIdx = fileName.lastIndexOf('.');
 			if (lIdx > -1) {
