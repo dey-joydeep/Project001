@@ -1,0 +1,63 @@
+@CHARSET "UTF-8";
+
+html {
+	height: 100%;
+}
+
+html body {
+	height: 100%;
+	overflow: hidden;
+}
+
+html body .container-fluid.body-content {
+	position: absolute;
+	top: 50px;
+	bottom: 30px;
+	right: 0;
+	left: 0;
+	overflow-y: auto;
+}
+
+header {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	background-color: rgb(217, 217, 217);
+	height: 5vh;
+}
+
+footer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgb(217, 217, 217);
+	height: 3vh;
+}
+
+#control-panel {
+
+}
+
+iframe {
+	width: 98vw;
+	height: 87vh;
+	position: relative;
+	margin: 0 auto;
+	border: 0;
+}
+
+.material-icons {
+	cursor: pointer;
+}
+
+.right-icons {
+	float: right;
+	margin-left: 1%;
+}
+
+.left-icons {
+	float: left;
+	margin-right: 1%;
+}

@@ -1,0 +1,103 @@
+@CHARSET "UTF-8";
+
+.chat-sub-panel {
+	display: inline-block;
+	height: 100vh;
+	border: 1px solid;
+	overflow-y: auto;
+}
+
+#user-panel {
+
+}
+
+#msg-panel {
+	padding-top: 0.5%;
+}
+
+#user-info-panel {
+	display: none;
+}
+
+.users {
+	width: 28%;
+	cursor: pointer;
+	list-style-type: none;
+	line-height: 2;
+}
+
+.msg {
+	width: 100%;
+}
+
+.wrapper {
+	clear: both;
+	max-width: 30%;
+	display: inline-block;
+	position: relative;
+}
+
+.wrapper>a {
+	display: inline;
+}
+
+.content {
+	max-width: 90%;
+	padding: 1px 10px;
+	display: inline-block;
+	border-radius: 20px;
+	word-break: break-word;
+}
+
+.sender-msg {
+	float: left;
+}
+
+.receiver-msg {
+	float: right;
+}
+
+.sender-msg>.content {
+	background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+}
+
+.receiver-msg>.content {
+	background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+#search-id {
+	margin-top: 1%;
+}
+
+.footnote {
+	margin-left: 15px;
+	margin-right: 5px;
+}
+
+.footnote * {
+	font-size: 0.5em;
+}
+
+.footnote>div:FIRST-CHILD {
+	text-align: left;
+}
+
+.footnote>div:LAST-CHILD {
+	text-align: right;
+}
+
+#blank-panel {
+	display: none;
+}
+
+.material-icons {
+	cursor: pointer;
+}
+
+#text-out {
+	height: 70vh;
+}
+
+#text-in {
+	height: 30vh;
+}
