@@ -21,29 +21,33 @@
 	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 	crossorigin="anonymous"></script>
 <script>
-
+	
 </script>
 </head>
 <body>
-	<header></header>
 	<div class="container-fluid body-content">
 		<div class="row">
-			<div id="control-panel" class="col">
-				<div class="row">
-					<div class="col icon-set">
-						<i class="material-icons left-icons" title="Create New Message">chat</i>
-						<i class="material-icons right-icons" title="Profile">account_circle</i>
-						<i class="material-icons right-icons" title="Settings">settings</i>
-					</div>
+			<header class="col">Chat Application</header>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div id="control-panel">
+					<i class="material-icons left-icons" title="Create New Message">chat</i>
+					<i class="material-icons right-icons" title="Profile">account_circle</i>
+					<i class="material-icons right-icons" title="Settings">settings</i>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">
-				<iframe src="chat"></iframe>
+				<div id="frame-panel">
+					<iframe src="chat"></iframe>
+				</div>
 			</div>
 		</div>
+		<div class="row">
+			<footer class="col"> Copyright &copy; Joydeep Dey </footer>
+		</div>
 	</div>
-	<footer></footer>
 </body>
 </html>

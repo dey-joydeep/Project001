@@ -8,7 +8,7 @@
 }
 
 #user-panel {
-
+	
 }
 
 #msg-panel {
@@ -20,10 +20,9 @@
 }
 
 .users {
-	width: 28%;
 	cursor: pointer;
-	list-style-type: none;
-	line-height: 2;
+	font-size: 0.8em;
+	padding-left: 0px;
 }
 
 .msg {
@@ -51,18 +50,28 @@
 
 .sender-msg {
 	float: left;
+	margin-left: 2%;
+}
+
+.sender-msg * {
+	float: left;
 }
 
 .receiver-msg {
 	float: right;
+	margin-right: 2%;
+}
+
+.receiver-msg * {
+	float: right;
 }
 
 .sender-msg>.content {
-	background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+	background-color: #D1C4E9;
 }
 
 .receiver-msg>.content {
-	background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+	background-color: #A5D6A7;
 }
 
 #search-id {
@@ -100,4 +109,12 @@
 
 #text-in {
 	height: 30vh;
+}
+
+.user-unit {
+	margin-bottom: 10%;
+}
+
+.avatar {
+	margin-right: 5%;
 }

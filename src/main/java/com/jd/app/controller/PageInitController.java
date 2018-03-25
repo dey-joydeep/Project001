@@ -19,10 +19,9 @@ public class PageInitController {
 		if (session == null || session.getAttribute("loginId") == null) {
 			model.addAttribute("login", new LoginBean());
 			return "login";
-		} else {
-			model.addAttribute("user", new UserDetailsBean());
-			return "home";
 		}
+		model.addAttribute("user", new UserDetailsBean());
+		return "home";
 	}
 
 	@GetMapping("/chat")

@@ -1,49 +1,65 @@
 @CHARSET "UTF-8";
 
 html {
-	height: 100%;
+	/* height: 100%; */
+	
 }
 
 html body {
-	height: 100%;
-	overflow: hidden;
+	/* height: 100%;
+	overflow: hidden; */
+	
 }
 
 html body .container-fluid.body-content {
-	position: absolute;
+	/* position: absolute;
 	top: 50px;
 	bottom: 30px;
 	right: 0;
+	left: 0; */
+	/* overflow-y: auto; */
+	
+}
+
+header, footer {
+	/* position: absolute;
 	left: 0;
-	overflow-y: auto;
+	right: 0; */
+	background-color: rgb(217, 217, 217);
+	padding-left: 1%;
+	display: flex;
+	align-items: center;
 }
 
 header {
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	background-color: rgb(217, 217, 217);
+	/* top: 0; */
 	height: 5vh;
+	font-size: 1.4rem;
+	font-weight: bold;
 }
 
 footer {
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgb(217, 217, 217);
+	/* bottom: 0; */
 	height: 3vh;
+	font-size: 0.7rem;
 }
 
 #control-panel {
+	
+}
 
+#control-panel>i {
+	line-height: inherit;
+}
+
+#frame-panel {
+	height: 86.5vh;
+	max-height: 89vh;
 }
 
 iframe {
 	width: 98vw;
-	height: 87vh;
-	position: relative;
+	height: 100%;
 	margin: 0 auto;
 	border: 0;
 }

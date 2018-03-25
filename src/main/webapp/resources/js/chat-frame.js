@@ -28,16 +28,22 @@ function loadUsers() {
 
 	jqXhr.done(function(data) {
 		var div = $('#user-list');
-		var ul = $('<ul></ul>');
 		if (data.length > 0) {
 			$('#search-id').removeAttr('disabled');
 			$.each(data, function(idx, user) {
-				var li = $('<li class="users" id="' + user.publicUsername
-						+ '"</li>');
-				li.text(user.firstname + " " + user.lastname);
-				ul.append(li);
+				var unitDiv = $('<div class="user-unit"></div>');
+				var userDiv = $('<div class="users" id="' + user.publicUsername
+						+ '"</div>');
+				var name = user.firstname + " " + user.lastname;
+				userDiv.text(name);
+				var img = $('<img class="avatar" height="30" width="30">');
+				img.attr('src', user.avatar);
+				img.prop('alt', name);
+				img.prop('title', name);
+				userDiv.prepend(img);
+				unitDiv.append(userDiv);
+				div.append(unitDiv);
 			});
-			div.append(ul);
 			$('.users').click(function() {
 				$('#user-info-panel').toggle();
 			});
@@ -80,17 +86,20 @@ function loadMessages() {
 				img.prop('alt', msg.senderName);
 				img.prop('title', msg.senderName);
 
-				wrapperDiv.append(anchor);
-				wrapperDiv.append(contentDiv);
+				// wrapperDiv.append(anchor);
+				// wrapperDiv.append(contentDiv);
 			} else {
 				wrapperDiv.addClass('receiver-msg');
 				anchor.attr('href', msg.receiverId);
 				img.prop('alt', msg.receiverName);
 				img.prop('title', msg.receiverName);
 
-				wrapperDiv.append(contentDiv);
-				wrapperDiv.append(anchor);
+				// wrapperDiv.append(contentDiv);
+				// wrapperDiv.append(anchor);
 			}
+
+			wrapperDiv.append(anchor);
+			wrapperDiv.append(contentDiv);
 
 			tsDiv.text('2018/03/23 11:15:39');
 			statusDiv.text('Seen');
