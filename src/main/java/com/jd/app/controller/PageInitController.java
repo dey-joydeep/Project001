@@ -29,4 +29,10 @@ public class PageInitController {
 		model.addAttribute("user", new UserDetailsBean());
 		return "frames/chat";
 	}
+
+	@GetMapping("/settings")
+	public String showSettingsPage(Model model) {
+		model.addAttribute("user", new UserDetailsBean());
+		return "frames/settings";
+	}
 }
