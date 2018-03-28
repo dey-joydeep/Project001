@@ -11,9 +11,12 @@ public class PreLoginServiceImpl implements PreLoginService {
 	@Override
 	public void authorize(LoginBean loginBean) {
 		String message = "Access authorized!";
-		if ("123".equals(loginBean.getLoginId())
+		if (loginBean.getLoginId().isEmpty()
+				|| loginBean.getPassword().isEmpty())
+			message = "Username/Password is not entered.";
+		else if ("123".equals(loginBean.getLoginId())
 				&& "123".equals(loginBean.getPassword()))
-			loginBean.setStatus(true);
+			loginBean.setSuccess(true);
 		else
 			message = "Access not authorized!";
 		loginBean.setPassword(null);
