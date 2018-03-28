@@ -10,6 +10,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
+<link rel="stylesheet" href="resources/css/login.css" media="all">
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"
 	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	crossorigin="anonymous"></script>
@@ -29,7 +30,7 @@
 			});
 
 			jqXhr.done(function(data) {
-				if (!data.status) {
+				if (!data.success) {
 					$('#msg-div').text(data.message);
 				} else {
 					window.location.reload();
@@ -52,9 +53,11 @@
 </script>
 </head>
 <body>
-	<div class="container">
+	<header>Chat Application</header>
+	<div class="container centered-form">
 		<form:form id="login-form" modelAttribute="login" method="post"
 			action="login">
+			<div id="msg-div"></div>
 			<div class="form-group">
 				<form:label path="loginId">Username: </form:label>
 				<form:input path="loginId" name="loginId" id="login-id"
@@ -66,6 +69,6 @@
 			<form:button id="login" name="login" class="btn btn-outline-primary">Login</form:button>
 		</form:form>
 	</div>
-	<div id="msg-div"></div>
+	<footer> Copyright &copy; Joydeep Dey </footer>
 </body>
 </html>
