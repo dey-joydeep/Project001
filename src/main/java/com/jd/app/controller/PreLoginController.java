@@ -24,7 +24,8 @@ public class PreLoginController {
 	public LoginBean login(@RequestBody LoginBean loginBean,
 			HttpServletRequest request) {
 		preLoginService.authorize(loginBean);
-		if (loginBean.getStatus()) {
+
+		if (loginBean.isSuccess()) {
 			HttpSession session = request.getSession(true);
 			session.setAttribute("loginId", loginBean.getLoginId());
 		}
