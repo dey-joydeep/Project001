@@ -1,4 +1,5 @@
 $(function() {
+	$('[data-toggle="tooltip"]').tooltip();
 	loadUsers();
 	loadMessages();
 	$('#search-id').on('input', function() {
@@ -14,6 +15,10 @@ $(function() {
 			$('#user-panel').hide();
 		}
 	});
+
+	$('#text-in').on('input', function() {
+		controlChatContent($(this));
+	});
 });
 
 function loadUsers() {
@@ -26,6 +31,8 @@ function loadUsers() {
 		contentType : "application/json; charset=utf-8"
 	});
 
+	var imgTag = '<img class="avatar" height="30" width="30" data-toggle="tooltip" data-placement="bottom" >';
+
 	jqXhr.done(function(data) {
 		var div = $('#user-list');
 		if (data.length > 0) {
@@ -36,7 +43,7 @@ function loadUsers() {
 						+ '"</div>');
 				var name = user.firstname + " " + user.lastname;
 				userDiv.text(name);
-				var img = $('<img class="avatar" height="30" width="30">');
+				var img = $(imgTag);
 				img.attr('src', user.avatar);
 				img.prop('alt', name);
 				img.prop('title', name);
@@ -45,7 +52,7 @@ function loadUsers() {
 				div.append(unitDiv);
 			});
 			$('.users').click(function() {
-				$('#user-info-panel').toggle();
+				$('#summary-panel').toggle();
 			});
 		}
 	});
@@ -63,13 +70,15 @@ function loadMessages() {
 		contentType : "application/json; charset=utf-8"
 	});
 
+	var imgTag = '<img  height="36" width="36" data-toggle="tooltip" data-placement="bottom" >';
+
 	jqXhr.done(function(data) {
 		var div = $('#message-out');
 		$.each(data, function(idx, msg) {
 			var msgDiv = $('<div class="msg" </div>');
 			var wrapperDiv = $('<div class="wrapper" ></div>');
 			var anchor = $('<a ></a>');
-			var img = $('<img  height="36" width="36">');
+			var img = $(imgTag);
 			var contentDiv = $('<div class="content"></div>');
 			var tsDiv = $('<div class="col"></div>');
 			var statusDiv = $('<div class="col"></div>');
@@ -125,5 +134,13 @@ function searchUser() {
 			$(li[i]).hide();
 
 		}
+	}
+}
+
+function controlChatContent(elem) {
+	if (elem.text().length > 0) {
+		$('#send-btn').removeClass('disabled');
+	} else {
+		$('#send-btn').addClass('disabled');
 	}
 }
