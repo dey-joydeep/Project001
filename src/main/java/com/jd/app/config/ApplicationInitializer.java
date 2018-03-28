@@ -19,5 +19,4 @@ public class ApplicationInitializer extends
 	protected String[] getServletMappings() {
 		return new String[] { "/" };
 	}
-
 }
