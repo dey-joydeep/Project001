@@ -4,24 +4,24 @@
 	display: inline-block;
 	height: 100vh;
 	border: 1px solid;
-	overflow-y: auto;
+	/* 	overflow-y: auto; */
 }
 
 #user-panel {
-	
+	overflow-y: auto;
 }
 
 #msg-panel {
 	padding-top: 0.5%;
 }
 
-#user-info-panel {
+#summary-panel {
 	display: none;
 }
 
 .users {
 	cursor: pointer;
-	font-size: 0.8em;
+	font-size: 1rem;
 	padding-left: 0px;
 }
 
@@ -44,7 +44,7 @@
 	max-width: 90%;
 	padding: 1px 10px;
 	display: inline-block;
-	border-radius: 20px;
+	border-radius: 8px;
 	word-break: break-word;
 }
 
@@ -67,11 +67,13 @@
 }
 
 .sender-msg>.content {
-	background-color: #D1C4E9;
+	/* 	background-color: #D1C4E9; */
+	border: 1px solid;
 }
 
 .receiver-msg>.content {
-	background-color: #A5D6A7;
+	/* 	background-color: #A5D6A7; */
+	border: 1px solid;
 }
 
 #search-id {
@@ -95,6 +97,19 @@
 	text-align: right;
 }
 
+.heading {
+	width: 100%;
+	display: inline-flex;
+}
+
+.heading :FIRST-CHILD {
+	width: 100%;
+}
+
+.heading :LAST-CHILD {
+	text-align: right;
+}
+
 #blank-panel {
 	display: none;
 }
@@ -103,18 +118,51 @@
 	cursor: pointer;
 }
 
-#text-out {
-	height: 70vh;
+#message-out {
+	height: 87vh;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	border-bottom: 1px solid;
+	overflow-y: auto;
+}
+
+#message-in {
+	width: 96%;
+	position: absolute;
+	bottom: 0;
+	margin: 0 auto;
 }
 
 #text-in {
-	height: 30vh;
+	border: 1px solid;
+	overflow-y: auto;
+}
+
+#text-in:focus {
+	outline: none;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
 }
 
 .user-unit {
-	margin-bottom: 10%;
+	margin-bottom: 5%;
 }
 
 .avatar {
 	margin-right: 5%;
+}
+
+.extras {
+	width: 100%;
+}
+
+.mb-3.input-box {
+	margin-bottom: 0.4rem !important;
+	height: 7.5vh;
+}
+
+.disabled * {
+	cursor: auto;
 }
