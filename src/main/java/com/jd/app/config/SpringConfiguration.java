@@ -33,7 +33,7 @@ public class SpringConfiguration implements WebMvcConfigurer {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/resources/**")
-				.addResourceLocations("/resources/").setCachePeriod(31556926);
+		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/").setCachePeriod(31556926);
+		registry.addResourceHandler("/favicon.ico").addResourceLocations("/favicon.ico").setCachePeriod(31556926);
 	}
 }

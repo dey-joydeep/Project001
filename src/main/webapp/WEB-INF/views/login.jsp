@@ -54,20 +54,22 @@
 </head>
 <body>
 	<header>Chat Application</header>
-	<div class="container centered-form">
-		<form:form id="login-form" modelAttribute="login" method="post"
-			action="login">
-			<div id="msg-div"></div>
-			<div class="form-group">
-				<form:label path="loginId">Username: </form:label>
-				<form:input path="loginId" name="loginId" id="login-id"
-					cssClass="form-control" />
-				<form:label path="password">Password:</form:label>
-				<form:password path="password" name="password" id="password"
-					cssClass="form-control" />
-			</div>
-			<form:button id="login" name="login" class="btn btn-outline-primary">Login</form:button>
-		</form:form>
+	<div class="container-fluid centered-form">
+		<div>
+			<form:form id="login-form" modelAttribute="login" method="post"
+				action="login">
+				<div id="msg-div"></div>
+				<div class="form-group">
+					<form:label path="loginId">Username: </form:label>
+					<form:input path="loginId" name="loginId" id="login-id"
+						cssClass="form-control" />
+					<form:label path="password">Password:</form:label>
+					<form:password path="password" name="password" id="password"
+						cssClass="form-control" />
+				</div>
+				<form:button id="login" name="login" class="btn btn-outline-primary">Login</form:button>
+			</form:form>
+		</div>
 	</div>
 	<footer> Copyright &copy; Joydeep Dey </footer>
 </body>

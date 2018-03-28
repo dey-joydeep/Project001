@@ -24,14 +24,21 @@ footer {
 }
 
 .centered-form {
+	position: absolute;
+	display: table;
+	top: 5vh;
+	height: 92vh;
+}
 
+.centered-form>div {
+	display: table-cell;
+	vertical-align: middle;
 }
 
 #login-form {
-	width: 25%;
+	width: 30%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 30%;
 }
 
 #msg-div {
