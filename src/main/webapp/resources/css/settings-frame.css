@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+.settings-sub-panel {
+	height: 100vh;
+	border: 1px solid;
+}
+
+.nav>a {
+	color: #6c757d;
+}
+
+.nav>a:hover {
+	color: #343a40;
+}
