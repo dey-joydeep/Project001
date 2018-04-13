@@ -48,6 +48,10 @@ footer {
 	height: 3vh;
 }
 
+#control-panel a {
+	color: #000;
+}
+
 #control-panel * {
 	line-height: inherit;
 }
@@ -98,10 +102,22 @@ i.dropdown-toggle::after {
 	box-shadow: none !important;
 }
 
-iframe:not(:first-child) {
-	display: none;
-}
+iframe
+:not
 
+(
+:first-child
+
+)
+{
+display
+:
+
+none
+;
+
+
+}
 #cancel-btn>i, #send-btn>i {
 	line-height: inherit;
 }
