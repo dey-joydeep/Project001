@@ -20,7 +20,9 @@ public class PageInitController {
 			model.addAttribute("login", new LoginBean());
 			return "login";
 		}
-		model.addAttribute("user", new UserDetailsBean());
+		UserDetailsBean userBean = new UserDetailsBean();
+		userBean.setUsername(session.getAttribute("loginId").toString());
+		model.addAttribute("user", userBean);
 		return "home";
 	}
 
