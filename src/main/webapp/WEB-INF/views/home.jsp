@@ -1,4 +1,4 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <!DOCTYPE html>
@@ -100,5 +100,6 @@
 			</div>
 		</div>
 	</div>
+	<input type="hidden" name="" id="h-uname" value="${user.username}">
 </body>
 </html>
