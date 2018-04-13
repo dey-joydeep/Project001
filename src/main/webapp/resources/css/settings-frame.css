@@ -12,3 +12,15 @@
 .nav>a:hover {
 	color: #343a40;
 }
+
+.details {
+	display: none;
+}
+
+.footnote {
+	font-size: 0.8rem;
+}
+
+.input-group {
+	width: 40%;
+}
