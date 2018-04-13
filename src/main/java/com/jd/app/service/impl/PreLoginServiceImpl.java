@@ -19,6 +19,7 @@ public class PreLoginServiceImpl implements PreLoginService {
 			loginBean.setSuccess(true);
 		else
 			message = "Access not authorized!";
+		loginBean.setUsername(loginBean.getLoginId());
 		loginBean.setPassword(null);
 		loginBean.setMessage(message);
 	}
