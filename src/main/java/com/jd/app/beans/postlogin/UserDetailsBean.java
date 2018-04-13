@@ -11,6 +11,10 @@ public class UserDetailsBean extends SharedBean {
 
 	@Getter
 	@Setter
+	private String username;
+
+	@Getter
+	@Setter
 	private String firstname;
 
 	@Getter
