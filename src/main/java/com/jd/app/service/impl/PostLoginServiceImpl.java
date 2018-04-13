@@ -2,6 +2,8 @@ package com.jd.app.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,7 @@ public class PostLoginServiceImpl implements PostLoginService {
 		List<UserDetailsBean> userList = new ArrayList<>();
 		for (int i = 0; i < 50; i++) {
 			UserDetailsBean bean = new UserDetailsBean();
+			bean.setUsername(loginId);
 			bean.setFirstname("User-" + (i + 1));
 			bean.setLastname("");
 			bean.setPublicUsername("user" + (i + 1));
@@ -60,6 +63,7 @@ public class PostLoginServiceImpl implements PostLoginService {
 		MenuBean bean;
 		CommonMenuBean subMenu;
 		List<CommonMenuBean> subMenuList;
+		Map<String, Object> attribMap;
 
 		bean = new MenuBean();
 		bean.setIdentifier("new-msg-icon");
@@ -70,6 +74,7 @@ public class PostLoginServiceImpl implements PostLoginService {
 		bean.setMenuItemPosition("LEFT");
 		bean.setClickActionType("MODAL");
 		bean.setModalTarget("#new-msg-modal");
+		bean.setLinkHref("#");
 		menuList.add(bean);
 
 		bean = new MenuBean();
@@ -79,6 +84,7 @@ public class PostLoginServiceImpl implements PostLoginService {
 		bean.setIconName("move_to_inbox");
 		bean.setTooltipPosition("bottom");
 		bean.setMenuItemPosition("LEFT");
+		bean.setLinkHref("#");
 		menuList.add(bean);
 
 		bean = new MenuBean();
@@ -88,25 +94,56 @@ public class PostLoginServiceImpl implements PostLoginService {
 		bean.setIconName("settings");
 		bean.setTooltipPosition("top");
 		bean.setMenuItemPosition("RIGHT");
+		bean.setLinkHref("#settings");
 
 		subMenuList = new ArrayList<>();
 		subMenu = new CommonMenuBean();
 		subMenu.setName("Account");
+		subMenu.setParameterName("item");
+		subMenu.setParameterValue("set-1");
+		attribMap = new TreeMap<>();
+		attribMap.put("data-param", "set-1");
+		subMenu.setOtherAttributes(attribMap);
 		subMenuList.add(subMenu);
 		subMenu = new CommonMenuBean();
 		subMenu.setName("General");
+		subMenu.setParameterName("item");
+		subMenu.setParameterValue("set-2");
+		attribMap = new TreeMap<>();
+		attribMap.put("data-param", "set-2");
+		subMenu.setOtherAttributes(attribMap);
 		subMenuList.add(subMenu);
 		subMenu = new CommonMenuBean();
 		subMenu.setName("Security");
+		subMenu.setParameterName("item");
+		subMenu.setParameterValue("set-3");
+		attribMap = new TreeMap<>();
+		attribMap.put("data-param", "set-3");
+		subMenu.setOtherAttributes(attribMap);
 		subMenuList.add(subMenu);
 		subMenu = new CommonMenuBean();
 		subMenu.setName("Privacy");
+		subMenu.setParameterName("item");
+		subMenu.setParameterValue("set-4");
+		attribMap = new TreeMap<>();
+		attribMap.put("data-param", "set-4");
+		subMenu.setOtherAttributes(attribMap);
 		subMenuList.add(subMenu);
 		subMenu = new CommonMenuBean();
 		subMenu.setName("Chats");
+		subMenu.setParameterName("item");
+		subMenu.setParameterValue("set-5");
+		attribMap = new TreeMap<>();
+		attribMap.put("data-param", "set-5");
+		subMenu.setOtherAttributes(attribMap);
 		subMenuList.add(subMenu);
 		subMenu = new CommonMenuBean();
 		subMenu.setName("Notification");
+		subMenu.setParameterName("item");
+		subMenu.setParameterValue("set-6");
+		attribMap = new TreeMap<>();
+		attribMap.put("data-param", "set-6");
+		subMenu.setOtherAttributes(attribMap);
 		subMenuList.add(subMenu);
 		bean.setSubMenuList(subMenuList);
 		menuList.add(bean);
@@ -118,6 +155,7 @@ public class PostLoginServiceImpl implements PostLoginService {
 		bean.setIconName("account_circle");
 		bean.setTooltipPosition("top");
 		bean.setMenuItemPosition("RIGHT");
+		bean.setLinkHref("#profile");
 
 		subMenuList = new ArrayList<>();
 		subMenu = new CommonMenuBean();
