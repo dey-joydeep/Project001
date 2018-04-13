@@ -1,5 +1,7 @@
 package com.jd.app.beans.common;
 
+import java.util.Map;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -22,4 +24,12 @@ public class CommonMenuBean {
 	@Getter
 	@Setter
 	private String parameterValue;
+
+	@Getter
+	@Setter
+	private String linkHref;
+
+	@Getter
+	@Setter
+	private Map<String, Object> otherAttributes;
 }
