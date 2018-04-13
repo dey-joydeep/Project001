@@ -30,13 +30,99 @@
 		<div class="row main-panel">
 			<div class="col-3 settings-sub-panel">
 				<nav class="nav flex-column">
-					<a class="nav-link" href="#">Account</a> <a class="nav-link"
-						href="#">General</a> <a class="nav-link" href="#">Security</a> <a
-						class="nav-link" href="#">Privacy</a> <a class="nav-link" href="#">Chats</a>
-					<a class="nav-link" href="#">Notification</a>
+					<a class="nav-link" href="#settings_set-1" data-param="set-1">Account</a>
+					<a class="nav-link" href="#settings_set-2" data-param="set-2">General</a>
+					<a class="nav-link" href="#settings_set-3" data-param="set-3">Security</a>
+					<a class="nav-link" href="#settings_set-4" data-param="set-4">Privacy</a>
+					<a class="nav-link" href="#settings_set-5" data-param="set-5">Chats</a>
+					<a class="nav-link" href="#settings_set-6" data-param="set-6">Notification</a>
 				</nav>
 			</div>
-			<div class="col settings-sub-panel"></div>
+			<div class="col settings-sub-panel setting-details">
+
+				<div class="details" data-param="set-1">
+					<section>
+						<h4>Suspend Account</h4>
+						<p>Suspend this account. When an account is in suspended
+							state, you cannot be able to operate this account until the
+							suspension is revoked. Once the account is suspended, you will be
+							automatically logged out from all the devices. On login again,
+							you will be asked to choose whether the suspension will be
+							continued or revoked. On revoking, the account will back to the
+							normal state. If you have any trusted device with two steps
+							verification turned on, the device will be required to verify
+							again.</p>
+						<p>When in suspended state, your friends cannot visit your
+							profile or send new message or reply to your message. However,
+							you will not lose your contacts and they can check any previously
+							made conversation. Revoking suspension would make them able to
+							interact with again.</p>
+						<input type="button" value="Suspend" class="btn btn-secondary">
+					</section>
+					<section>
+						<h4>Delete Account</h4>
+						<p>Delete this account permanently. When an account is
+							deleted, all data with this account will be erased and you will
+							be logged out from all the devices you are connected from. Alike
+							suspend, your friends cannot visit your profile or send new
+							message or reply to your message. However, you will not lose your
+							contacts and they can check any previously made conversation. If
+							you want to get connected with your friends again, you need to
+							start from the beginning by singing up.</p>
+						<input type="button" value="Delete" class="btn btn-danger">
+					</section>
+				</div>
+				<div class="details row" data-param="set-2">
+					<div class="col-6">
+						Set or update your
+						<code>username</code>
+						. A
+						<code>username</code>
+						must be unique to the profile and can be used for login. You also
+						can refer your account by the
+						<code>username</code>
+						. Updating your
+						<code>username</code>
+						account will not be affected by the update.
+						<div class="alert alert-light footnote" role="alert">
+							Caution: If you update your
+							<code>username</code>
+							, any referral to your account with previous
+							<code>username</code>
+							will be inaccessible.
+						</div>
+						<div class="input-group mb-3">
+							<input type="text" class="form-control"
+								placeholder="Type a username" aria-label="Type a username"
+								aria-describedby="basic-addon2">
+							<div class="input-group-append">
+								<input type="button" value="" id="uname-set-btn"
+									class="btn btn-outline-primary">
+							</div>
+						</div>
+					</div>
+					<div class="col-6">
+						<div>
+							<p>Your current email address: abc@example.com</p>
+							<div class="input-group mb-3">
+								<input type="text" class="form-control"
+									placeholder="xyz@example.com" aria-label="xyz@example.com"
+									aria-describedby="basic-addon2">
+								<div class="input-group-append">
+									<input type="button" value="Update" id="uname-set-btn"
+										class="btn btn-outline-primary">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-6"></div>
+				</div>
+				<div class="details" data-param="set-3">Security settings</div>
+				<div class="details" data-param="set-4">Privacy settings</div>
+				<div class="details" data-param="set-5">Chats settings</div>
+				<div class="details" data-param="set-6">Notification settings</div>
+
+			</div>
 		</div>
 	</div>
 </body>
