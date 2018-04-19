@@ -22,5 +22,20 @@
 }
 
 .input-group {
-	width: 40%;
+	width: 50%;
+}
+
+.semi-row {
+	padding: 15px;
+	max-width: 100%;
+	width: 70%;
+	border: 1px solid;
+	border-radius: 6px;
+	border-color: #b3b4b5;
+	margin-top: 2%;
+	margin-left: 2%
+}
+
+input[type=text], input[type=password] {
+	width: 50%;
 }
