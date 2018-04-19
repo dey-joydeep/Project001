@@ -1,30 +1,6 @@
 @CHARSET "UTF-8";
 
-html {
-	/* height: 100%; */
-
-}
-
-html body {
-	/* height: 100%;
-	overflow: hidden; */
-
-}
-
-html body .container-fluid.body-content {
-	/* position: absolute;
-	top: 50px;
-	bottom: 30px;
-	right: 0;
-	left: 0; */
-	/* overflow-y: auto; */
-
-}
-
 header, footer {
-	/* position: absolute;
-	left: 0;
-	right: 0; */
 	background-color: rgb(217, 217, 217);
 	padding-left: 1%;
 	display: flex;
@@ -32,14 +8,12 @@ header, footer {
 }
 
 header {
-	/* top: 0; */
 	height: 5vh;
 	font-size: 1.4rem;
 	font-weight: bold;
 }
 
 footer {
-	/* bottom: 0; */
 	height: 3vh;
 	font-size: 0.7rem;
 }
@@ -66,6 +40,7 @@ iframe {
 	height: 100%;
 	margin: 0 auto;
 	border: 0;
+	display: none;
 }
 
 .material-icons {
@@ -100,24 +75,4 @@ i.dropdown-toggle::after {
 	-webkit-box-shadow: none !important;
 	-moz-box-shadow: none !important;
 	box-shadow: none !important;
-}
-
-iframe
-:not
-
-(
-:first-child
-
-)
-{
-display
-:
-
-none
-;
-
-
-}
-#cancel-btn>i, #send-btn>i {
-	line-height: inherit;
 }
