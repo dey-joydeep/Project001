@@ -28,6 +28,8 @@ function displayFrame() {
 		if (parts.length > 1) {
 			$('a[data-param=' + parts[1] + ']').click();
 		}
+	} else {
+		$($('iframe')[0]).show();
 	}
 }
 
