@@ -73,7 +73,7 @@
 					</section>
 				</div>
 				<div class="details row" data-param="set-2">
-					<div class="col-6">
+					<div class="semi-row">
 						Set or update your
 						<code>username</code>
 						. A
@@ -95,29 +95,80 @@
 							<input type="text" class="form-control"
 								placeholder="Type a username" aria-label="Type a username"
 								aria-describedby="basic-addon2">
-							<div class="input-group-append">
-								<input type="button" value="" id="uname-set-btn"
-									class="btn btn-outline-primary">
-							</div>
 						</div>
 					</div>
-					<div class="col-6">
+					<div class="semi-row">
 						<div>
 							<p>Your current email address: abc@example.com</p>
 							<div class="input-group mb-3">
 								<input type="text" class="form-control"
 									placeholder="xyz@example.com" aria-label="xyz@example.com"
 									aria-describedby="basic-addon2">
-								<div class="input-group-append">
-									<input type="button" value="Update" id="uname-set-btn"
-										class="btn btn-outline-primary">
-								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-6"></div>
+					<div class="semi-row">
+						<div>
+							<p>Your current phone number: (+91)9800012345</p>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<select class="" id="cnt-code">
+										<option>+91</option>
+										<option>+81</option>
+										<option>+92</option>
+										<option>+82</option>
+										<option>+1</option>
+									</select>
+								</div>
+								<input type="number" class="form-control"
+									placeholder="9800012345" aria-label="9800012345"
+									aria-describedby="basic-addon2">
+							</div>
+						</div>
+					</div>
+					<div class="semi-row">
+						<input type="button" value="Save" id="gen-set-save-btn"
+							class="btn btn-outline-primary">
+					</div>
 				</div>
-				<div class="details" data-param="set-3">Security settings</div>
+				<div class="details row" data-param="set-3">
+					<div class="semi-row">
+						<h5>Change Passowrd</h5>
+						<div class="form-group">
+							<label for="curr-pass">Current password</label> <input
+								type="password" class="form-control" id="curr-pass"
+								placeholder="Current Password">
+						</div>
+						<div class="form-group">
+							<label for="new-pass">New password</label> <input type="password"
+								class="form-control" id="new-pass" placeholder="New Password">
+						</div>
+						<div class="form-group">
+							<label for="re-new-pass">Re-confirm password</label> <input
+								type="password" class="form-control" id="re-new-pass"
+								placeholder="Re-enter new Password">
+						</div>
+					</div>
+					<div class="semi-row">
+						<label>Set or update security questions</label> <input
+							type="button" value="Start" id="sec-ques-start-btn"
+							class="btn btn-outline-primary">
+					</div>
+					<div class="semi-row">
+						<label>Review saved devices</label><input type="button"
+							value="Review" id="rev-devc-btn" class="btn btn-outline-primary">
+					</div>
+					<div class="semi-row">
+						<label>Check last 10 login activity</label><input type="button"
+							value="Check" id="chk-login-act-btn"
+							class="btn btn-outline-primary">
+					</div>
+
+					<div class="semi-row">
+						<label>2-setp Verification</label><input type="button" value="Set"
+							id="set-2-stp-ver-btn" class="btn btn-outline-primary">
+					</div>
+				</div>
 				<div class="details" data-param="set-4">Privacy settings</div>
 				<div class="details" data-param="set-5">Chats settings</div>
 				<div class="details" data-param="set-6">Notification settings</div>
