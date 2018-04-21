@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
 <link rel="stylesheet" href="resources/css/chat-frame.css">
+<link rel="stylesheet" href="resources/css/common.css" media="all">
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"
 	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	crossorigin="anonymous"></script>
@@ -48,13 +49,16 @@
 				<div id="message-out" class="row"></div>
 				<div id="message-in" class="row">
 					<div class="extras">
-						<i class="material-icons" title="Smiley" data-toggle="tooltip"
-							data-placement="bottom">insert_emoticon</i> <i
-							class="material-icons" title="Send Photos" data-toggle="tooltip"
-							data-placement="bottom">insert_photo</i><i class="material-icons"
-							title="Send Videos" data-toggle="tooltip" data-placement="bottom">videocam</i>
-						<i class="material-icons" title="Send Files" data-toggle="tooltip"
-							data-placement="bottom">attach_file</i>
+						<i class="material-icons md-12" title="Smiley"
+							data-toggle="tooltip" data-placement="bottom">insert_emoticon</i>
+						<i class="material-icons md-12" title="Take Photo"
+							data-toggle="tooltip" data-placement="bottom">camera_enhance</i><i
+							class="material-icons md-12" title="Send Photos"
+							data-toggle="tooltip" data-placement="bottom">insert_photo</i><i
+							class="material-icons md-12" title="Send Videos"
+							data-toggle="tooltip" data-placement="bottom">videocam</i> <i
+							class="material-icons md-12" title="Send Files"
+							data-toggle="tooltip" data-placement="bottom">attach_file</i>
 					</div>
 					<div class="input-group mb-3 input-box">
 						<div id="text-in" contenteditable="true" class="form-control"
