@@ -5,24 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
-<link rel="stylesheet" href="resources/css/settings-frame.css">
-<script src="http://code.jquery.com/jquery-3.3.1.min.js"
-	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	crossorigin="anonymous"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-	crossorigin="anonymous"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-	crossorigin="anonymous"></script>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="resources/css/settings/settings-frame.css">
+<jsp:include page="../common_js_with_popper.jsp" />
 <script src="resources/js/settings-frame.js"></script>
 </head>
 <body>
@@ -101,7 +87,7 @@
 						<div>
 							<p>Your current email address: abc@example.com</p>
 							<div class="input-group mb-3">
-								<input type="text" class="form-control"
+								<input type="email" class="form-control"
 									placeholder="xyz@example.com" aria-label="xyz@example.com"
 									aria-describedby="basic-addon2">
 							</div>
@@ -120,13 +106,12 @@
 										<option>+1</option>
 									</select>
 								</div>
-								<input type="number" class="form-control"
-									placeholder="9800012345" aria-label="9800012345"
-									aria-describedby="basic-addon2">
+								<input type="tel" class="form-control" placeholder="9800012345"
+									aria-label="9800012345" aria-describedby="basic-addon2">
 							</div>
 						</div>
 					</div>
-					<div class="semi-row">
+					<div class="semi-row btn-row">
 						<input type="button" value="Save" id="gen-set-save-btn"
 							class="btn btn-outline-primary">
 					</div>
@@ -169,9 +154,64 @@
 							id="set-2-stp-ver-btn" class="btn btn-outline-primary">
 					</div>
 				</div>
-				<div class="details" data-param="set-4">Privacy settings</div>
-				<div class="details" data-param="set-5">Chats settings</div>
-				<div class="details" data-param="set-6">Notification settings</div>
+				<div class="details" data-param="set-4">
+					<div class="semi-row">
+						<label>Block an user from bothering you or check and
+							handle already blocked user.</label> <input type="button"
+							value="Block/Check" id="blk-chk-btn"
+							class="btn btn-outline-primary">
+					</div>
+					<div class="semi-row">
+						<label>Set your "online" visibility status to one or more
+							users.</label> <input type="button" value="Set" id="on-off-vis-stat-btn"
+							class="btn btn-outline-primary">
+					</div>
+					<div class="semi-row">
+						<label>Set your "last seen" visibility status to one or
+							more users.</label> <input type="button" value="Set"
+							id="last-vis-stat-btn" class="btn btn-outline-primary">
+					</div>
+					<div class="semi-row">
+						<label>Control your "profile picture" visibility to one or
+							more users.</label> <input type="button" value="Set" id="dp-vis-ctrl-btn"
+							class="btn btn-outline-primary">
+					</div>
+					<div class="semi-row">
+						<label>Control "Message Receipt" visibility to one or more
+							users.</label> <input type="button" value="Set" id="msg-rcpt-ctrl-btn"
+							class="btn btn-outline-primary">
+					</div>
+				</div>
+				<div class="details" data-param="set-5">
+					<div class="semi-row">
+						<label>Delete all chats</label> <input type="button"
+							value="Delete" id="dlt-all-chat-btn"
+							class="btn btn-outline-danger">
+					</div>
+					<div class="semi-row">
+						<label>Archive all chats</label> <input type="button"
+							value="Archive" id="arc-all-chat-btn"
+							class="btn btn-outline-secondary">
+					</div>
+					<div class="semi-row">
+						<label>Download all chats</label> <input type="button"
+							value="Download" id="dnld-all-chat-btn"
+							class="btn btn-outline-success">
+					</div>
+				</div>
+				<div class="details" data-param="set-6">
+					<div class="semi-row">
+						<p>All Notifications</p>
+						<div class="form-check form-check-inline">
+							<label class="form-check-label">Mute</label><input type="radio"
+								value="0" name="all-rad" class="form-check-input">
+						</div>
+						<div class="form-check form-check-inline">
+							<label class="form-check-label">Unmute</label><input type="radio"
+								value="1" name="all-rad" class="form-check-input">
+						</div>
+					</div>
+				</div>
 
 			</div>
 		</div>

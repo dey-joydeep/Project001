@@ -28,4 +28,16 @@ public class UserDetailsBean extends SharedBean {
 	@Getter
 	@Setter
 	private String avatar;
+
+	@Getter
+	@Setter
+	private String lastMessage;
+
+	@Getter
+	@Setter
+	private String lastMessageTime;
+
+	@Getter
+	@Setter
+	private short lastMessageStatus;
 }

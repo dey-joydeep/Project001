@@ -5,36 +5,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
 <title>Home</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
-<link rel="stylesheet" href="resources/css/styler.css" media="all">
-<link rel="stylesheet" href="resources/css/common.css" media="all">
-<script src="http://code.jquery.com/jquery-3.3.1.min.js"
-	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	crossorigin="anonymous"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-	crossorigin="anonymous"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-	crossorigin="anonymous"></script>
+<link rel="stylesheet" href="resources/css//home/home.css" media="all">
+
+<jsp:include page="common_js_with_popper.jsp" />
 <script src="resources/js/home.js"></script>
 </head>
 <body>
+	<header class="d-none d-lg-block d-md-block">Messaging Application</header>
 	<div class="container-fluid">
 		<div class="row">
-			<header class="col">Chat Application</header>
-		</div>
-		<div class="row">
 			<div class="col">
-				<div id="control-panel"></div>
+				<div id="control-panel" class="clearfix"></div>
 			</div>
 		</div>
 		<div class="row">
@@ -42,10 +26,9 @@
 				<div id="frame-panel"></div>
 			</div>
 		</div>
-		<div class="row">
-			<footer class="col"> Copyright &copy; Joydeep Dey </footer>
-		</div>
 	</div>
+	<footer class="d-none d-lg-block"> Copyright &copy; Joydeep
+		Dey </footer>
 
 	<!-- Modal -->
 	<div class="modal fade" id="new-msg-modal" tabindex="-1" role="dialog"

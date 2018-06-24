@@ -23,4 +23,8 @@ public class LoginBean extends SharedBean {
 	@Getter
 	@Setter
 	private String password;
+
+	@Getter
+	@Setter
+	private boolean rememberMe;
 }

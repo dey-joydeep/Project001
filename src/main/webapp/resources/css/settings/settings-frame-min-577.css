@@ -1,0 +1,20 @@
+.users {
+	font-size: 1rem;
+}
+
+.user-unit {
+	margin-bottom: 5%;
+}
+
+.avatar {
+	margin-right: 5%;
+}
+
+.settings-sub-panel {
+	height: 100vh;
+	border: 1px solid;
+}
+
+.setting-details {
+	border-left: none;
+}

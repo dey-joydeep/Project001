@@ -5,25 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
-<link rel="stylesheet" href="resources/css/chat-frame.css">
-<link rel="stylesheet" href="resources/css/common.css" media="all">
-<script src="http://code.jquery.com/jquery-3.3.1.min.js"
-	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	crossorigin="anonymous"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-	crossorigin="anonymous"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-	crossorigin="anonymous"></script>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+<link rel="stylesheet" href="resources/css/chat/chat-frame.css">
+<jsp:include page="../common_js_with_popper.jsp" />
 <script src="resources/js/chat-frame.js"></script>
 </head>
 <body>
@@ -31,36 +16,56 @@
 		<div class="row">
 			<div id="user-panel" class="chat-sub-panel col-3">
 				<div class="heading">
-					<label>Friend List</label> <label class="ctrl-icon"><i
-						class="material-icons" title="Collapse Friend List">remove</i></label>
+					<label>Friend List</label>
 				</div>
 				<div id="user-search" class="form-group">
-					<input type="text" name="searchId" id="search-id"
+					<input type="search" name="searchId" id="search-id"
 						class="form-control" placeholder="Search Friend"
 						disabled="disabled">
 				</div>
 				<div id="user-list"></div>
 			</div>
-			<div id="blank-panel" class="chat-sub-panel">
-				<span class="ctrl-icon"><i class="material-icons"
-					title="Expand Friend List">add</i></span>
-			</div>
 			<div id="msg-panel" class="chat-sub-panel col">
-				<div id="message-out" class="row"></div>
-				<div id="message-in" class="row">
-					<div class="extras">
-						<i class="material-icons md-12" title="Smiley"
-							data-toggle="tooltip" data-placement="bottom">insert_emoticon</i>
-						<i class="material-icons md-12" title="Take Photo"
-							data-toggle="tooltip" data-placement="bottom">camera_enhance</i><i
-							class="material-icons md-12" title="Send Photos"
-							data-toggle="tooltip" data-placement="bottom">insert_photo</i><i
-							class="material-icons md-12" title="Send Videos"
-							data-toggle="tooltip" data-placement="bottom">videocam</i> <i
-							class="material-icons md-12" title="Send Files"
-							data-toggle="tooltip" data-placement="bottom">attach_file</i>
+				<div class="row">
+					<div class="col chat-top-bar clearfix">
+						<div class="float-left d-lg-none d-md-none">
+							<i class="material-icons" id="back-to-friend-list">
+								arrow_back_ios </i>
+						</div>
+						<div id="user-info" class="float-left"></div>
+						<div class="float-right">
+							<i class="material-icons">call</i> <i class="material-icons">videocam</i>
+						</div>
 					</div>
-					<div class="input-group mb-3 input-box">
+				</div>
+				<div id="message-out" class="row">
+					<div class="col"></div>
+				</div>
+				<div id="message-in" class="row">
+					<div class="extras col">
+						<i class="material-icons md-12 float-left d-none d-lg-block"
+							title="Smiley" data-toggle="tooltip" data-placement="bottom">insert_emoticon</i>
+
+						<i class="material-icons md-12 float-left" title="Take Photo"
+							data-toggle="tooltip" data-placement="bottom">camera_enhance</i>
+						<i id="send-items"
+							class="material-icons dropdown-toggle float-right"
+							data-toggle="dropdown">add</i>
+
+						<div class="dropdown-menu" aria-labelledby="send-items">
+
+							<a class="dropdown-item" href="#"><i class="material-icons">perm_media</i>
+								<label> Send Photos &amp; Videos</label></a> <a
+								class="dropdown-item" href="#"><i class="material-icons">insert_drive_file</i>
+								<label>Send Documents</label></a> <a class="dropdown-item" href="#"><i
+								class="material-icons">add_location</i> <label>Send
+									Location</label></a> <a class="dropdown-item" href="#"><i
+								class="material-icons">account_box</i> <label>Send
+									Contact</label></a>
+						</div>
+					</div>
+					<div class="w-100"></div>
+					<div class="input-group mb-3 input-box col">
 						<div id="text-in" contenteditable="true" class="form-control"
 							aria-label="" aria-describedby="basic-addon1"></div>
 						<div class="input-group-append">
@@ -74,6 +79,8 @@
 			</div>
 			<div id="summary-panel" class="chat-sub-panel col-3">User Info
 				Panel</div>
+			<input type="hidden" id="curr-size" value="0"> <input
+				type="hidden" id="next-size" value="100">
 		</div>
 	</div>
 </body>

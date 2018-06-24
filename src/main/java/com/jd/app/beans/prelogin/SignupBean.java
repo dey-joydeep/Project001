@@ -1,13 +1,19 @@
 package com.jd.app.beans.prelogin;
 
+import java.util.Map;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import com.jd.app.beans.common.SharedBean;
+import com.jd.app.beans.common.PasswordBean;
 
 @ToString
-public class SignupBean extends SharedBean {
+public class SignupBean extends PasswordBean {
+
+	@Getter
+	@Setter
+	private short loginMode;
 
 	@Getter
 	@Setter
@@ -15,7 +21,7 @@ public class SignupBean extends SharedBean {
 
 	@Getter
 	@Setter
-	private String password;
+	private String phoneNo;
 
 	@Getter
 	@Setter
@@ -32,4 +38,16 @@ public class SignupBean extends SharedBean {
 	@Getter
 	@Setter
 	private String sex;
+
+	@Getter
+	@Setter
+	private Map<String, String> errMap;
+
+	@Getter
+	@Setter
+	private short deviceType;
+
+	@Getter
+	@Setter
+	private short pageVal;
 }

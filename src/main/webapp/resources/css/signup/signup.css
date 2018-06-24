@@ -1,0 +1,68 @@
+@CHARSET "UTF-8";
+
+@IMPORT url("../common.css");
+@IMPORT url("signup-max-576.css") screen and (max-width:576px);
+@IMPORT url("signup-min-577.css") screen and (min-width:577px);
+
+#signup-form {
+	border: 1px solid;
+	border-radius: 10px;
+	padding: 20px;
+}
+
+.heading {
+	margin-top: 2%;
+	margin-bottom: 2%;
+	text-align: center;
+}
+
+.input-group>.input-group-prepend {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.input-group>.col-md-2 {
+	padding-left: 0;
+	padding-right: 0;
+	border-radius: 0;
+	max-width: 12%;
+}
+
+.input-group>.col-md-2>.form-control {
+	border-radius: 0;
+}
+
+.div-text-right {
+	width: 100%;
+	text-align: right;
+}
+
+.policy-note {
+	font-size: 0.9rem;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+.sidenote {
+	font-weight: normal;
+	font-size: 0.8rem;
+}
+
+.btn-ctrl {
+	margin-top: 3%;
+}
+
+.login-switch {
+	color: #5c9dc9;
+}
+
+#mobile-div {
+	display: none;
+	cursor: pointer;
+}
+
+.foortnote {
+	width: 70%;
+	margin-top: 1%;
+	text-align: center;
+}

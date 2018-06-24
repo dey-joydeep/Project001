@@ -1,11 +1,19 @@
 var frameLoadCnt = -1;
 $(function() {
-	console.log('Page reloaded');
 	loadMenus();
 	loadFrames();
 	$(document).ajaxStop(function() {
-		$('[data-toggle="tooltip"]').tooltip();
-		$('.material-icons.dropdown-toggle').tooltip();
+		$(window).resize(function() {
+			if (is1200EL()) {
+				$('[data-toggle="tooltip"]').tooltip();
+				$('.material-icons.dropdown-toggle').tooltip();
+			}
+			if (isMobile()) {
+				$('[data-toggle="tooltip"]').tooltip('dispose');
+				$('.material-icons.dropdown-toggle').tooltip('dispose');
+			}
+		});
+
 		setClickActions();
 
 		var iframes = $('iframe');
@@ -34,9 +42,12 @@ function displayFrame() {
 }
 
 function setClickActions() {
-	$('#inbox-icon').click(function() {
+	$('#home-icon').click(function() {
 		$('.frames').hide();
 		$('#chat-frame').show();
+
+		$('#chat-frame').getFrameElemFromParent('.chat-sub-panel').hide();
+		$('#chat-frame').getFrameElemFromParent('#user-panel').show();
 	});
 
 	$('[aria-labelledby="icon-settings"]>a').click(
@@ -46,6 +57,17 @@ function setClickActions() {
 				$('#settings-frame')[0].contentWindow.clickLink($(this).attr(
 						'data-param'));
 			});
+
+	$('#logout-icon').click(function() {
+		var jqXhr = $.ajax({
+			url : 'logout',
+			method : 'get',
+			contentType : "application/json; charset=utf-8"
+		});
+		jqXhr.done(function(data) {
+			window.location.replace(context);
+		});
+	});
 }
 
 function hideDropDown() {
@@ -60,7 +82,6 @@ function loadMenus() {
 	var jqXhr = $.ajax({
 		url : 'menu',
 		method : 'get',
-		// async: false,
 		contentType : "application/json; charset=utf-8"
 	});
 	jqXhr.done(function(data) {
@@ -104,9 +125,9 @@ function mapMenu(menu) {
 	}
 
 	if (menu.menuItemPosition === 'RIGHT') {
-		menuIcon.addClass('right-icons');
+		menuDiv.addClass('float-right');
 	} else {
-		menuIcon.addClass('left-icons');
+		menuDiv.addClass('float-left');
 	}
 
 	menuDiv.append(menuIcon);

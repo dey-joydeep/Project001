@@ -15,22 +15,6 @@ public class MessageBean extends SharedBean {
 
 	@Getter
 	@Setter
-	private String senderId;
-
-	@Getter
-	@Setter
-	private String receiverId;
-
-	@Getter
-	@Setter
-	private String senderName;
-
-	@Getter
-	@Setter
-	private String receiverFirstname;
-
-	@Getter
-	@Setter
 	private String sentAt;
 
 	@Getter
@@ -51,5 +35,9 @@ public class MessageBean extends SharedBean {
 
 	@Getter
 	@Setter
-	private String avatar;
+	private Object attachment;
+
+	@Getter
+	@Setter
+	private boolean sender;
 }

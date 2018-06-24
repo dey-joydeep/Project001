@@ -1,16 +1,17 @@
 package com.jd.app.service.def;
 
 import com.jd.app.beans.prelogin.LoginBean;
+import com.jd.app.beans.prelogin.SignupBean;
 
 public interface PreLoginService {
 
 	void authorize(LoginBean loginBean);
 
-	void callSignup();
+	void validateSignup(SignupBean signupBean);
 
-	void execSignup();
+	void execSignup(SignupBean signupBean);
 
-	void initForgetPassword();
+	void validateForgetPassword();
 
 	void execForgetPassword();
 

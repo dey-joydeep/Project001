@@ -5,22 +5,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
 <title>Login</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
-<link rel="stylesheet" href="resources/css/login.css" media="all">
-<script src="http://code.jquery.com/jquery-3.3.1.min.js"
-	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	crossorigin="anonymous"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-	crossorigin="anonymous"></script>
+<link rel="stylesheet" href="resources/css/login/login.css" media="all">
+<jsp:include page="common_js_only.jsp" />
 <script>
 	$(function() {
 		$('#login-form').submit(function(e) {
+			$('#msg-div').hide();
+			$('#msg-div').text('');
 			e.preventDefault();
 			var jqXhr = $.ajax({
 				url : $(this).attr('action'),
@@ -32,44 +26,65 @@
 			jqXhr.done(function(data) {
 				if (!data.success) {
 					$('#msg-div').text(data.message);
+					$('#msg-div').show();
 				} else {
 					window.location.reload();
 				}
 			});
 		});
-	});
 
-	function convertToJsonString(formArray) {
-
-		var data = "{";
-		for (var i = 0; i < formArray.length; i++) {
-			data += ('"' + formArray[i]['name'] + '":"' + formArray[i]['value'] + '"');
-			if (i < formArray.length - 1)
-				data += ',';
+		if (isMobile()) {
+			$('.col-4').replaceClass('col', 'col-4');
 		}
-		data += "}";
-		return data;
-	}
+	});
 </script>
 </head>
 <body>
-	<header>Chat Application</header>
+	<header>Messaging Application</header>
 	<div class="container-fluid centered-form">
-		<div>
-			<form:form id="login-form" modelAttribute="login" method="post"
-				action="login">
-				<div id="msg-div"></div>
-				<div class="form-group">
-					<form:label path="loginId">Username: </form:label>
-					<form:input path="loginId" name="loginId" id="login-id"
-						cssClass="form-control" />
-					<form:label path="password">Password:</form:label>
-					<form:password path="password" name="password" id="password"
-						cssClass="form-control" />
+		<div id="msg-div"></div>
+		<form:form id="login-form" modelAttribute="login" method="post"
+			action="login" cssClass="center">
+			<div class="row justify-content-end">
+				<div class="col">
+					<div class="form-group">
+						<form:label path="loginId" cssClass="field-label">Username: </form:label>
+						<form:input path="loginId" id="login-id" cssClass="form-control"
+							placeholder="Login ID or email or mobile no." />
+					</div>
 				</div>
-				<form:button id="login" name="login" class="btn btn-outline-primary">Login</form:button>
-			</form:form>
-		</div>
+				<div class="w-100"></div>
+				<div class="col">
+					<div class="form-group">
+						<form:label path="password" cssClass="field-label">Password:</form:label>
+						<form:password path="password" id="password"
+							cssClass="form-control" placeholder="Password" />
+					</div>
+				</div>
+				<div class="w-100"></div>
+				<div class="col">
+					<div class="form-check form-check-inline">
+						<form:checkbox path="rememberMe" id="rem-chk"
+							cssClass="form-check-input" value="false" />
+						<form:label path="rememberMe"
+							cssClass="form-check-label field-label">Remember me</form:label>
+					</div>
+				</div>
+				<div class="w-100"></div>
+				<div class="col-4 p-3">
+					<form:button id="login-btn" name="login"
+						class="btn btn-sm btn-outline-primary btn-block">Login</form:button>
+				</div>
+				<div class="w-100"></div>
+				<div class="col links">
+					<a href="#">Forgot Password? Click here to reset.</a>
+					<div class="w-100"></div>
+					<label> Don't have an account yet? <a href="signup"
+						class="">Sign up</a>
+					</label>
+				</div>
+			</div>
+		</form:form>
 	</div>
 	<footer> Copyright &copy; Joydeep Dey </footer>
 </body>
