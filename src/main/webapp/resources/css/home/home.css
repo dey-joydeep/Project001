@@ -2,12 +2,15 @@
 
 @IMPORT url("../common.css");
 
-@IMPORT url("home-max-576.css") screen and (max-width:576px);
+@IMPORT url("home-max-576.css") screen
+	and
+	(max-width:576px);
 
-@IMPORT url("home-min-577.css") screen and (min-width:577px);
+@IMPORT url("home-min-577.css") screen
+	and
+	(min-width:577px);
 
 #control-panel {
-	height: 5vh;
 	padding: 5px 15px;
 }
 

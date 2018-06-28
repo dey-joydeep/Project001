@@ -1,4 +1,11 @@
 #frame-panel {
-	height: 85.3vh !important;
-	max-height: 86vh !important;
+	height: 89vh !important;
+}
+
+.header-label {
+	width: 13vw;
+}
+
+#control-panel {
+	width: 85vw;
 }

@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="resources/css/chat/chat-frame.css">
 <jsp:include page="../common_js_with_popper.jsp" />
 <script src="resources/js/chat-frame.js"></script>
+<script src="resources/js/ws-comm.js"></script>
 </head>
 <body>
 	<div id="chat-panel" class="container-fluid">
@@ -36,6 +37,7 @@
 						<div class="float-right">
 							<i class="material-icons">call</i> <i class="material-icons">videocam</i>
 						</div>
+						<input type="hidden" name="receiverId" id="receiver-id">
 					</div>
 				</div>
 				<div id="message-out" class="row">
@@ -43,17 +45,25 @@
 				</div>
 				<div id="message-in" class="row">
 					<div class="extras col">
-						<i class="material-icons md-12 float-left d-none d-lg-block"
+						<i class="material-icons float-left d-none d-lg-inline"
 							title="Smiley" data-toggle="tooltip" data-placement="bottom">insert_emoticon</i>
 
-						<i class="material-icons md-12 float-left" title="Take Photo"
+						<i class="material-icons float-left" title="Take Photo"
 							data-toggle="tooltip" data-placement="bottom">camera_enhance</i>
+
+						<i class="material-icons d-none d-md-inline float-left"
+							title="Send Photos & Videos" data-toggle="tooltip"
+							data-placement="bottom">perm_media</i> <i
+							class="material-icons d-none d-md-inline float-left"
+							title="Send Documents" data-toggle="tooltip"
+							data-placement="bottom">insert_drive_file</i> <i
+							class="material-icons d-none d-md-inline float-left"
+							title="Location" data-toggle="tooltip" data-placement="bottom">add_location</i>
 						<i id="send-items"
-							class="material-icons dropdown-toggle float-right"
+							class="d-sm-inline d-md-none material-icons dropdown-toggle float-right"
 							data-toggle="dropdown">add</i>
 
 						<div class="dropdown-menu" aria-labelledby="send-items">
-
 							<a class="dropdown-item" href="#"><i class="material-icons">perm_media</i>
 								<label> Send Photos &amp; Videos</label></a> <a
 								class="dropdown-item" href="#"><i class="material-icons">insert_drive_file</i>

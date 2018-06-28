@@ -53,13 +53,16 @@ function loadUsers() {
 			$('.user-unit').click(function() {
 				openChatPanel($(this));
 			});
+
+			if (!isMobile())
+				$('.user-unit').first().click();
 		}
 	});
 }
 
 /**
  * Generate list of users info depending
- * 
+ *
  * @param mainDiv
  *            DIV, where user list will be added
  * @param user
@@ -71,7 +74,7 @@ function generateUserList(mainDiv, user) {
 			+ '<div class="col-2"><img class="avatar" height="40" width="40"></div>'
 			+ '<div class="col-10">'
 			+ '<div class="row no-gutters">'
-			+ '<div class="users col-7"><span class="user-status"></span></div>'
+			+ '<div class="users text-truncate col-7"><span class="user-status"></span></div>'
 			+ '<div class="col message-time text-right"></div>'
 			+ '<div class="w-100"></div>'
 			+ '<div class="message-summary col-10 text-truncate"></div>'
@@ -118,7 +121,7 @@ function generateUserList(mainDiv, user) {
 
 /**
  * Open chat panel for selected user passed via parameter as jQuery object.
- * 
+ *
  * @param user
  *            Selected user
  */
@@ -138,7 +141,7 @@ function openChatPanel(user) {
  * Load message for given user. If called by user selection, only last 100
  * messages will be loaded. If called by scrolling up, next 100 from current
  * will be loaded. Calling from message notification is same as user selection.
- * 
+ *
  * @param user
  *            Selected user
  * @param caller
@@ -166,11 +169,12 @@ function loadMessages(user, caller) {
 		userDiv.append(imgTag);
 		userDiv.append(chat.senderName);
 
+		$('#receiver-id').val(user.find('.friend-ids').val());
+
 		var messageDiv = $('#message-out>div.col');
 		if (chat.messages.length > 0) {
 			$.each(chat.messages, function(idx, msg) {
-				// renderMessage(messageDiv, msg, caller);
-				renderMessageTemp(messageDiv, msg);
+				renderMessage(messageDiv, msg);
 			});
 			if (caller === 1) {
 				messageDiv.scrollTop(messageDiv.prop("scrollHeight"));
@@ -180,56 +184,13 @@ function loadMessages(user, caller) {
 		}
 	});
 }
+
 function renderMessage(mainDiv, msg) {
-	var blankCol = '<div class="col"></div>';
-	var msgDiv = $('<div class="msg col"></div>');
-	var contentDiv = $('<div class="content row" ></div>');
-	var wrapperBody = $('<div class="wrapper col-10"></div>');
-	var msgBody = $('<div class="msg-body"></div>');
-	var bottomDiv = $('<div class="bottom row"></div>');
-	var tsDiv = $('<div class="col"></div>');
-	var statusDiv = $('<div class="col text-right"></div>');
-
-	msgDiv.attr('id', msg.messageId);
-	msgBody.text(msg.content);
-
-	if (msg.sender) {
-		contentDiv.addClass('sender-msg');
-	} else {
-		contentDiv.addClass('receiver-msg');
-	}
-	wrapperBody.append(msgBody);
-	wrapperBody.append('<div class="w-100"></div>');
-
-	tsDiv.text(msg.sentAt);
-	statusDiv.text('Seen');
-	bottomDiv.append(tsDiv);
-	bottomDiv.append(statusDiv);
-	wrapperBody.append($('<div class="col"></div>').append(bottomDiv));
-
-	contentDiv.append(wrapperBody);
-	msgDiv.append(contentDiv);
-	mainDiv.append(msgDiv);
-	$('<div class="w-100"></div>').insertAfter(msgDiv);
-
-	if (msg.sender) {
-		msgDiv.addClass('align-self-end');
-		$('.content>div').first().addClass('order-last');
-		$('.content>div').last().addClass('order-first');
-	} else {
-		msgDiv.addClass('align-self-start');
-	}
-
-	msgBody.click(function() {
-		$(this).parent().find('.bottom').toggleClass('flex-display');
-	});
-}
-
-function renderMessageTemp(mainDiv, msg) {
-	var proto = '<div class="msg row" >' + '<div class="col-10 content"></div>'
+	var proto = '<div class="msg row">'
+			+ '<div class="col-10 col-lg-4 content"></div>'
 			+ '<div class="w-100"></div>'
-			+ '<div class="col-10 attachments"></div>'
-			+ '<div class="w-100"></div>' + '<div class="col-10">'
+			+ '<div class="col-10 col-lg-4 attachments"></div>'
+			+ '<div class="w-100"></div>' + '<div class="col-10 col-lg-4">'
 			+ '<div class="d-inline message-time"></div>'
 			+ '<div class="d-inline message-status float-right"></div>'
 			+ '</div>';

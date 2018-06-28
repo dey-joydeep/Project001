@@ -1,2 +1,32 @@
+.user-unit:focus, .user-unit:active, .user-unit:hover {
+	background-color: #4caf5029;
+}
 
+.users, .message-summary {
+	font-size: 0.9rem;
+}
 
+.message-time, .message-status {
+	font-size: 0.7rem;
+}
+
+div#message-out {
+	height: 80vh;
+}
+
+div#message-in {
+	height: 12vh;
+	padding-bottom: 0;
+}
+
+div.input-box {
+	height: 65px;
+}
+
+div#user-list {
+	height: 87vh;
+}
+
+div.extras>i.material-icons {
+	margin-right: 0.5%;
+}

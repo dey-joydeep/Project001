@@ -65,6 +65,45 @@ $(function() {
 			$('#nxt-btn').click();
 		}
 	});
+
+	$('#signup-btn').click(
+			function() {
+				var jqXhr = $.ajax({
+					url : 'signup',
+					type : 'post',
+					data : convertToJsonString($('#signup-form')
+							.serializeArray()),
+					contentType : "application/json; charset=utf-8"
+				});
+
+				jqXhr.done(function(data) {
+					if (!data.success) {
+						$('#msg-div').text(data.message);
+						var errMap = data.errMap;
+						$('#msg-div').show();
+						$.each(errMap, function(k, v) {
+							var elem = $('[name=' + k + ']');
+							var span = $('<span class="error"></span');
+							var label = elem.closest('.field-div').find(
+									'.field-label');
+							span.text(v);
+							span.insertAfter(label);
+
+							if (k === 'birthdate') {
+								$.each($('.dob'), function(i) {
+									var dobElem = $($('.dob')[i]);
+									if (dobElem.val().length === 0)
+										dobElem.addClass('is-invalid');
+								});
+							} else {
+								elem.addClass('is-invalid');
+							}
+						});
+					} else {
+						window.location.href = '/chatapp';
+					}
+				});
+			});
 });
 
 function controlPage(pageVal) {

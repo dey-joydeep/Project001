@@ -11,20 +11,20 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 import org.springframework.web.socket.server.standard.ServletServerContainerFactoryBean;
 import org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor;
 
-import com.jd.app.websocket.MessageHandler;
+import com.jd.app.websocket.WebSocketController;
 
+@Async
 @Configuration
 @EnableWebSocket
-@Async
 @ComponentScan("com.jd.app.websocket")
 public class WebSocketConfiguration implements WebSocketConfigurer {
 
 	@Autowired
-	protected MessageHandler messageHandler;
+	protected WebSocketController webSocketController;
 
 	@Override
 	public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-		registry.addHandler(messageHandler, "/socket/conn/ws").addInterceptors(
+		registry.addHandler(webSocketController, "/socket/conn/ws").addInterceptors(
 				new HttpSessionHandshakeInterceptor());
 	}
 

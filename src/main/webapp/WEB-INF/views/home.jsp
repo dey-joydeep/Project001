@@ -14,12 +14,17 @@
 <script src="resources/js/home.js"></script>
 </head>
 <body>
-	<header class="d-none d-lg-block d-md-block">Messaging Application</header>
+
+	<header>
+		<div class="d-none d-lg-inline d-md-inline header-label">Messaging
+			Application</div>
+		<div>
+			<div id="control-panel" class="clearfix"></div>
+		</div>
+	</header>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col">
-				<div id="control-panel" class="clearfix"></div>
-			</div>
+			<div class="col"></div>
 		</div>
 		<div class="row">
 			<div class="col">

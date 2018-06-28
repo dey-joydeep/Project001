@@ -16,7 +16,6 @@
 
 #user-list {
 	max-height: 92vh;
-	overflow-y: auto;
 }
 
 .users, .message-summary {

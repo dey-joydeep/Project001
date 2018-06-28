@@ -2,9 +2,17 @@
 
 @IMPORT url("../common.css");
 
-@IMPORT url("chat-frame-max-576.css") screen and (max-width:576px);
+@IMPORT url("chat-frame-max-576.css") screen
+	and
+	(max-width:576px);
 
-@IMPORT url("chat-frame-min-577.css") screen and (min-width:577px);
+@IMPORT url("chat-frame-min-577.css") screen
+	and
+	(min-width:577px);
+
+#chat-panel {
+	height: 100vh;
+}
 
 .chat-sub-panel {
 	height: 100vh;
@@ -15,6 +23,10 @@
 }
 
 /** User List related CSS starts */
+#user-list {
+	overflow-y: auto;
+}
+
 .user-unit {
 	margin-bottom: 3%;
 	padding-bottom: 3%;
@@ -30,7 +42,17 @@
 	display: inline-block;
 	margin-right: 3%;
 }
-	
+
+.online {
+	border-color: #3ccb0c;
+	background-color: #3ccb0c;
+}
+
+.offline {
+	border-color: #707070;
+	background-color: #707070;
+}
+
 .delivered {
 	color: green;
 }
@@ -60,42 +82,6 @@
 	word-break: break-word;
 	padding: 6px;
 }
-
-.receiver-msg>.wrapper {
-	padding-left: 0;
-}
-
-.sender-msg>.wrapper {
-	padding-right: 0;
-}
-
-.receiver-msg>.col-2 {
-	padding-left: 2px;
-	padding-right: 0;
-}
-
-.sender-msg>.col-2 {
-	padding-left: 0;
-	padding-right: 2px;
-}
-
-.bottom {
-	margin-top: 1%;
-	display: none;
-	font-size: 0.6rem;
-}
-
-.bottom>div {
-	padding: 0;
-}
-
-.bottom>div:first-child {
-	margin-left: 3%;
-}
-
-.bottom>div:last-child {
-	margin-right: 3%;
-}
 /** Message Related CSS ends **/
 #search-id {
 	margin-top: 1%;
@@ -114,23 +100,16 @@
 	text-align: right;
 }
 
-#message-out>.w-100 {
-	height: 2px;
-}
-
 #message-out {
-	max-height: 80vh;
-	/* 	width: 100%; */
-	/* 	position: absolute; */
-	/* 	top: 0; */
-	/* 	border-bottom: 1px solid; */
+	max-height: 82vh;
 	overflow-y: auto;
 	margin-top: 1rem;
 }
 
 #message-in {
-	position: absolute;
 	bottom: 0;
+	width: 100%;
+	position: absolute;
 	padding-bottom: 8%;
 }
 
@@ -144,7 +123,6 @@
 	-webkit-box-shadow: none !important;
 	-moz-box-shadow: none !important;
 	box-shadow: none !important;
-	height: 25%;
 }
 
 .mb-3.input-box {
@@ -169,24 +147,4 @@
 
 #user-info {
 	width: 35%;
-}
-
-.online, .offline {
-	width: 8px;
-	height: 8px;
-	border: 1px solid;
-	border-radius: 50%;
-	display: inline-block;
-	margin-left: 5%;
-	border-radius: 50%;
-}
-
-.online {
-	border-color: #3ccb0c;
-	background-color: #3ccb0c;
-}
-
-.offline {
-	border-color: #707070;
-	background-color: #707070;
 }
